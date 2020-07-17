@@ -1,0 +1,1037 @@
+{
+  "intents": [
+    {
+      "intent": "verify_ticket",
+      "examples": [
+        {
+          "text": "Ich möchte bitte den Status erfahren zu"
+        },
+        {
+          "text": "Ich möchte mein Ticket prüfen"
+        },
+        {
+          "text": "Ich möchte mein Ticket überprüfen"
+        },
+        {
+          "text": "Ich möchte Infos zu meinem Ticket"
+        },
+        {
+          "text": "Ich will das Ticket verifizieren"
+        },
+        {
+          "text": "Ok ich brauche den Status eines Tickets"
+        },
+        {
+          "text": "Status abfragen für T-907482"
+        },
+        {
+          "text": "Will den Status erfahren"
+        },
+        {
+          "text": "Würde gerne den Status erfahren"
+        },
+        {
+          "text": "Wie ist der Status"
+        },
+        {
+          "text": "Können Sie mir den Status sagen"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Nein",
+      "examples": [
+        {
+          "text": "Nö"
+        },
+        {
+          "text": "Nope"
+        },
+        {
+          "text": "Quatsch"
+        },
+        {
+          "text": "Nein"
+        },
+        {
+          "text": "Das stimmt nicht"
+        },
+        {
+          "text": "Das ist nicht richtig"
+        },
+        {
+          "text": "Falsch"
+        },
+        {
+          "text": "Nicht korrekt"
+        },
+        {
+          "text": "ne"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Neustart",
+      "examples": [
+        {
+          "text": "Prozess neu starten"
+        },
+        {
+          "text": "Neustart"
+        },
+        {
+          "text": "Bitte neu starten"
+        },
+        {
+          "text": "Bitte von Vorne anfangen"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "mail",
+      "examples": [
+        {
+          "text": "email"
+        },
+        {
+          "text": "mail"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "capabilities",
+      "examples": [
+        {
+          "text": "Was kann ich hier machen?"
+        },
+        {
+          "text": "Was kann ich hier tun?"
+        },
+        {
+          "text": "Wie funktioniert das Ticket System?"
+        },
+        {
+          "text": "Was kannst du?"
+        },
+        {
+          "text": "Wie klappt das?"
+        },
+        {
+          "text": "Was ist der Sinn dieses Systems?"
+        },
+        {
+          "text": "Was kann ich hier machen"
+        },
+        {
+          "text": "Was kann ich hier tun"
+        },
+        {
+          "text": "Erzählen sie mir wie das funktioniert"
+        },
+        {
+          "text": "Wie funktioniert dieses System?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "create_ticket",
+      "examples": [
+        {
+          "text": "Ich habe ein Problem und brauche ein Ticket"
+        },
+        {
+          "text": "Ich brauche ein neues Ticket"
+        },
+        {
+          "text": "Ich habe ein Problem mit"
+        },
+        {
+          "text": "Ich will ein Ticket öffnen"
+        },
+        {
+          "text": "Ich brauche Hilfe mit"
+        },
+        {
+          "text": "Würde gerne ein neues Ticket erstellen"
+        },
+        {
+          "text": "Ich benötige Hilfe"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Ja",
+      "examples": [
+        {
+          "text": "Yes"
+        },
+        {
+          "text": "Ja genau"
+        },
+        {
+          "text": "Ja"
+        },
+        {
+          "text": "Stimmt"
+        },
+        {
+          "text": "Ja bitte"
+        },
+        {
+          "text": "Genau"
+        },
+        {
+          "text": "Richtig"
+        },
+        {
+          "text": "Korrekt"
+        },
+        {
+          "text": "Jop"
+        },
+        {
+          "text": "Jep"
+        },
+        {
+          "text": "Das ist korrekt"
+        },
+        {
+          "text": "Ganz genau"
+        },
+        {
+          "text": "Jo"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "begrüßung",
+      "examples": [
+        {
+          "text": "Guten Tag"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "Morgen"
+        },
+        {
+          "text": "Wie gehts?"
+        },
+        {
+          "text": "Moin"
+        },
+        {
+          "text": "Servus"
+        },
+        {
+          "text": "Hey"
+        },
+        {
+          "text": "Hallo"
+        },
+        {
+          "text": "Heyho"
+        },
+        {
+          "text": "Tag"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "ticketNumber",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "number_syntax",
+          "patterns": [
+            "[T]{1}[-]\\d{6}"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "webhooks": [
+    {
+      "url": "",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Frage nach Email-Adresse",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Bitte nennen Sie mir jetzt noch Ihre Email-Adresse, damit wir Sie kontaktieren können."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1593434802019",
+      "conditions": "$ticketDescription",
+      "dialog_node": "node_9_1593455479498"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "mail"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_8_1593451026272",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1593451026291",
+      "previous_sibling": "handler_2_1593451026291"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1593451026272",
+      "context": {
+        "ticketContact": "@ticketContact"
+      },
+      "conditions": "@ticketContact",
+      "event_name": "input",
+      "dialog_node": "handler_2_1593451026291"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_5_1586352875740",
+      "disabled": true,
+      "conditions": "anything_else",
+      "dialog_node": "response_7_1586353080239",
+      "previous_sibling": "response_9_1586353002842"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_5_1586352875740",
+      "context": {
+        "ticketNumber": "<? @ticketNumber.literal ?>"
+      },
+      "disabled": true,
+      "conditions": "$webhook_result_2",
+      "dialog_node": "response_9_1586353002842"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_2_1586352068344",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_10_1586352803410"
+      },
+      "conditions": "true",
+      "dialog_node": "node_3_1586352655926",
+      "previous_sibling": "node_7_1586352283779"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ok. Status des Ticket $ticketNumber wird abgefragt..."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1586352068344",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_5_1586192438513"
+      },
+      "conditions": "#Ja",
+      "dialog_node": "node_7_1586352283779"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Es konnte leider kein Ticket erstellt werden. Falls Sie nochmal beginnen möchten sagen Sie \"Ticket erstellen\"."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1593455823560",
+      "conditions": "#Nein",
+      "dialog_node": "node_2_1593456302216",
+      "previous_sibling": "node_10_1593456222056"
+    },
+    {
+      "type": "standard",
+      "parent": "node_10_1593455823560",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_5_1586192438513"
+      },
+      "conditions": "#Ja",
+      "dialog_node": "node_10_1593456222056"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Das hat leider nicht geklappt. Versuchen Sie es bitte nochmal."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_5_1586192438513",
+      "conditions": "anything_else",
+      "dialog_node": "response_4_1586192458054",
+      "previous_sibling": "response_9_1586192457479"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$webhook_result_1.message"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1586192438513",
+      "conditions": "$webhook_result_1",
+      "dialog_node": "response_9_1586192457479",
+      "previous_sibling": "slot_3_1586351059188"
+    },
+    {
+      "type": "slot",
+      "parent": "node_5_1586192438513",
+      "variable": "$ticketNumber",
+      "dialog_node": "slot_3_1586351059188"
+    },
+    {
+      "type": "standard",
+      "title": "ticketContact Variable",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Prima."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1593455479498",
+      "context": {
+        "ticketContact": "<? input.text.extract('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+(\\.[a-zA-Z]+){1,}',0)?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_10_1593455823560"
+      },
+      "conditions": "true",
+      "dialog_node": "node_1_1593455635832"
+    },
+    {
+      "type": "standard",
+      "title": "Fragen nach ticketNummer",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Was ist die Ticketnummer?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1586350748184",
+      "conditions": "true",
+      "dialog_node": "node_10_1586352803410",
+      "previous_sibling": "node_2_1586352068344"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1586350748184",
+      "dialog_node": "slot_6_1586351099774",
+      "previous_sibling": "node_10_1586352803410"
+    },
+    {
+      "type": "standard",
+      "title": "ticketNumber vorhanden",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sie wollen den Status für Ticket $ticketNumber abfragen?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1586350748184",
+      "conditions": "@ticketNumber",
+      "dialog_node": "node_2_1586352068344"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Bitte nennen Sie mir Ihre Ticketnummer im Format AB12345."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_3_1586351059188",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1586351059221",
+      "previous_sibling": "handler_2_1586351059221"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_3_1586351059188",
+      "context": {
+        "ticketNumber": "@ticketNumber"
+      },
+      "conditions": "@ticketNumber",
+      "event_name": "input",
+      "dialog_node": "handler_2_1586351059221"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Das korrekte Format der Ticketnummer ist T-nnnnnn. Die n's repräsentieren 6 Nummern. Ein Beispiel wäre T-123456."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1586352803410",
+      "context": {
+        "ticketNumber": "<? @ticketNumber.literal ?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_10_1586352803410"
+      },
+      "conditions": "input.text.find('\\d')",
+      "dialog_node": "node_8_1586352881043",
+      "previous_sibling": "node_5_1586352875740"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ich benötige die Ticketnummer, um den Status abzurufen."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1586352803410",
+      "conditions": "true",
+      "dialog_node": "node_9_1586352886009",
+      "previous_sibling": "node_8_1586352881043"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ok Status für Ticketnummer $ticketNumber wird abgerufen..."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1586352803410",
+      "context": {
+        "ticketNumber": "<? @ticketNumber.literal ?>"
+      },
+      "metadata": {
+        "callout": {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "": ""
+          },
+          "result_variable": "webhook_result_2"
+        },
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_5_1586192438513"
+      },
+      "conditions": "@ticketNumber",
+      "dialog_node": "node_5_1586352875740"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1593432249962",
+      "variable": "$ticketDescription",
+      "dialog_node": "slot_5_1593432293150",
+      "previous_sibling": "node_10_1593434802019"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1593432249962",
+      "variable": "$ticketContact",
+      "dialog_node": "slot_4_1593432923162",
+      "previous_sibling": "slot_5_1593432293150"
+    },
+    {
+      "type": "standard",
+      "title": "ticketDescription Variable",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vielen Dank!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1593432249962",
+      "context": {
+        "ticketDescription": "<? input.text.extract('HD [a-zA-Z0-9\\s]+',0) ?>"
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_10_1593434802019"
+    },
+    {
+      "type": "standard",
+      "title": "Ticket ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ihr Ticket ist nun fast erstellt, bitte prüfen Sie die Informationen. Die Beschreibung lautet: $ticketDescription. Ihre Email-Adresse lautet: $ticketContact. Falls alle Informationen korrekt sind sagen Sie jetzt \"Ja\"."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1593432136666",
+      "dialog_node": "node_10_1593455823560",
+      "previous_sibling": "node_3_1593432249962"
+    },
+    {
+      "type": "standard",
+      "title": "Frage nach Ticketbeschreibung",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Bitte beschreiben Sie ihr Problem in einem Satz und starten Sie mit \"HD\" für Help Desk, z.B. \"HD mein Computer funktioniert nicht\". Vermeiden Sie Sondernzeichen wie \"!?.:;,-ß oder Zahlen wie 1-9"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1593432136666",
+      "conditions": "$ticketOperation",
+      "dialog_node": "node_3_1593432249962",
+      "digress_out": "allow_all_never_return"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Bitte beschreiben Sie das Problem in 2-3 Sätzen."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_5_1593432293150",
+      "event_name": "focus",
+      "dialog_node": "handler_6_1593432293177",
+      "previous_sibling": "handler_4_1593432293177"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_5_1593432293150",
+      "context": {
+        "ticketDescription": "@ticketDescription"
+      },
+      "conditions": "@ticketDescription",
+      "event_name": "input",
+      "dialog_node": "handler_4_1593432293177"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1586350566393",
+      "variable": "$ticketContact",
+      "dialog_node": "slot_8_1593451026272"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Bitte nennen Sie ihre Email-Adresse, damit wir Sie kontaktieren können."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_4_1593432923162",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1593432923171",
+      "previous_sibling": "handler_10_1593432923171"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_4_1593432923162",
+      "context": {
+        "ticketContact": "@ticketContact"
+      },
+      "conditions": "@ticketContact",
+      "event_name": "input",
+      "dialog_node": "handler_10_1593432923171"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_6_1586351099774",
+      "event_name": "focus",
+      "dialog_node": "handler_7_1586351099801",
+      "previous_sibling": "handler_5_1586351099801"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_6_1586351099774",
+      "event_name": "input",
+      "dialog_node": "handler_5_1586351099801"
+    },
+    {
+      "type": "standard",
+      "title": "Andernfalls",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ich habe Sie nicht verstanden. Bitte formulieren Sie Ihre Aussage neu."
+              },
+              {
+                "text": "Können Sie Ihre Aussage anders formulieren? Ich verstehe nicht, was Sie meinen."
+              },
+              {
+                "text": "Ich habe nicht verstanden, was Sie meinen."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Andernfalls",
+      "previous_sibling": "node_1_1593459536266",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Neustart",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Um den Prozess neu zu starten, z.B. um ein Ticket zu erstellen oder einen Status abzurufen, sagen Sie \"Neustart\"."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "$ticketOperation",
+      "dialog_node": "node_1_1593459536266",
+      "previous_sibling": "node_5_1586192438513"
+    },
+    {
+      "type": "standard",
+      "title": "Webhook zur CF für ticketOperation",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "ticketStatus": "$ticketStatus",
+            "ticketContact": "$ticketContact",
+            "ticketOperation": "$ticketOperation",
+            "ticketDescription": "$ticketDescription",
+            "verifyTicketNumber": "$ticketNumber"
+          },
+          "result_variable": "webhook_result_1"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_1_1593459536266"
+      },
+      "conditions": "",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_5_1586192438513",
+      "previous_sibling": "node_1_1586350748184"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ich kann Ihnen dabei helfen ein neues Ticket zu erstellen oder den Status eines existierenden Tickets abzufragen. Bitte sagen Sie mir was Sie tun möchten."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#capabilities",
+      "dialog_node": "node_1_1586350600885",
+      "previous_sibling": "node_8_1593459150955"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "In Ordnung, gerne erstelle ich ein Ticket für Sie, dazu benötige ich nur ein paar Informationen von Ihnen."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "ticketStatus": "open",
+        "ticketOperation": "createTicket"
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#create_ticket",
+      "digress_in": "not_available",
+      "dialog_node": "node_7_1593432136666",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_1_1586350600885"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hallo, wie kann ich helfen?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#begrüßung",
+      "dialog_node": "node_1_1586350566393",
+      "previous_sibling": "Willkommen"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": []
+      },
+      "context": {
+        "ticketNumber": "<? @ticketNumber.literal ?>",
+        "ticketOperation": "verifyTicket"
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#verify_ticket",
+      "dialog_node": "node_1_1586350748184",
+      "previous_sibling": "node_7_1593432136666"
+    },
+    {
+      "type": "standard",
+      "title": "Reset Context Variables",
+      "output": {
+        "generic": []
+      },
+      "context": {
+        "ticketNumber": null,
+        "ticketStatus": null,
+        "ticketContact": null,
+        "ticketOperation": null,
+        "ticketDescription": null
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_1_1586350566393"
+      },
+      "conditions": "#Neustart",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_8_1593459150955",
+      "previous_sibling": "node_1_1586350566393"
+    },
+    {
+      "type": "standard",
+      "title": "Willkommen",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hallo. Ich bin der Help Desk Assistent."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Willkommen"
+    }
+  ],
+  "counterexamples": [
+    {
+      "text": "HD meine Banane ist weg"
+    },
+    {
+      "text": "Mein Apfel ist verschwunden"
+    }
+  ],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Meinten Sie:",
+      "enabled": false,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "Nichts von dem oben genannten"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Meinten Sie:"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "Help Desk Webhook + CF",
+  "language": "de",
+  "description": ""
+}
