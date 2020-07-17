@@ -68,7 +68,7 @@ In your IBM Cloud Account go to the dashboard by clicking the IBM Logo in the up
 
 Afterwards launch your Watson Assistant Service, you will find it on your dashboard under services.
 
-Go to skills and create a new skill, when asked choose the dialog skill. Select import skill and upload the `skill-Email-Reminder.json` file.
+Go to skills and create a new skill, when asked choose the dialog skill. Select import skill and upload the `skill-Help-Desk-Webhook-and-CF.json` file.
 
 ![Import Skill](readme_images/import-skill.png)
 
