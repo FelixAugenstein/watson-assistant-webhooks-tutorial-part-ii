@@ -14,6 +14,12 @@ This tutorial consists of 2 parts, you can start with part I or II.<br>
 [Part I - Watson sends a reminder via e-mail](https://github.com/FelixAugenstein/digital-tech-tutorial-watson-assistant-webhooks)<br>
 [Part II - Watson creates a ticket and saves it to a Cloudant database](https://github.com/FelixAugenstein/digital-tech-tutorial-watson-assistant-webhooks-part-ii/)
 
+## Set up the Cloudant DB
+
+After the login you will see your IBM Cloud Dashboard. Go to Catalog and select the Databases category under services or search for Cloudant. Then create a new Cloudant, the Lite Plan should work for this tutorial. As Authentication method choose IAM.
+
+![Create Cloudant DB](readme_images/create-cloudant.png)
+
 ## If you have any questions just contact me
 Felix Augenstein<br>
 Digital Tech Ecosystem & Developer Representative @IBM<br>
