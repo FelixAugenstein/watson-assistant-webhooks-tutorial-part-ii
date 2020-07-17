@@ -74,11 +74,9 @@ Go to skills and create a new skill, when asked choose the dialog skill. Select 
 
 Click options and then select Webhooks. Provide the Web Action URL you obtained when creating the Endpoint. Make sure to add a `.json` at the end.
 
-![Add Webhook](readme_images/add-webhook.png)
+![Add Webhook with JSON](readme_images/add-webhook-dotjson.png)
 
-Now you can go to the dialog and to the corresponding node to provide your destination-email. When using the `@` character inside the parameter value, it must contain a double backslash `\\` afterwards, because the @ is a syntax for entities. Then you can try it and send a reminder to yourself. Under customize you can enable or disable webhooks.
-
-![Provide Destination Email](readme_images/provide-destination-email.png)
+Now you can go to the dialog and try it out for yourself. You can create a new ticket or verify the status of an existing ticket.
 
 ![Try it Out](readme_images/try-it-out.png)
 
