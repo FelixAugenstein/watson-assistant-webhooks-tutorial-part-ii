@@ -20,6 +20,10 @@ After the login you will see your IBM Cloud Dashboard. Go to Catalog and select 
 
 ![Create Cloudant DB](readme_images/create-cloudant.png)
 
+In your IBM Cloud Account go to the dashboard by clicking the IBM Logo in the upper left. Click on your new Cloudant service and select Service credentials to create new credentials. Copy them by clicking the copy button.
+
+![Create Service Credentials](readme_images/create-service-credentials.png)
+
 ## If you have any questions just contact me
 Felix Augenstein<br>
 Digital Tech Ecosystem & Developer Representative @IBM<br>
