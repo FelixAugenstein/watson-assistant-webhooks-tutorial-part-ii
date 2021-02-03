@@ -11,8 +11,8 @@
 ## Digital Tech Tutorial Watson Assistant Webhooks Part I and II
 
 This tutorial consists of 2 parts, you can start with part I or II.<br>
-[Part I - Watson sends a reminder via e-mail](https://github.com/FelixAugenstein/digital-tech-tutorial-watson-assistant-webhooks)<br>
-[Part II - Watson creates a ticket and saves it to a Cloudant database](https://github.com/FelixAugenstein/digital-tech-tutorial-watson-assistant-webhooks-part-ii/)
+[Part I - Watson sends a reminder via e-mail](https://github.com/FelixAugenstein/watson-assistant-webhooks-tutorial)<br>
+[Part II - Watson creates a ticket and saves it to a Cloudant database](https://github.com/FelixAugenstein/watson-assistant-webhooks-tutorial-part-ii)
 
 ## Set up the Cloudant DB
 
