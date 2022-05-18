@@ -82,9 +82,3 @@ Now you can go to the dialog and try it out for yourself. You can create a new t
 
 ![Try it Out](readme_images/try-it-out.png)
 
-
-## If you have any questions just contact me
-Felix Augenstein<br>
-Digital Tech Ecosystem & Developer Representative @IBM<br>
-Twitter: [@F_Augenstein](https://twitter.com/F_Augenstein)<br>
-LinkedIn: [linkedin.com/in/felixaugenstein](https://www.linkedin.com/in/felixaugenstein/)
