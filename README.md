@@ -16,7 +16,7 @@ This tutorial consists of 2 parts, you can start with part I or II.<br>
 
 ## Set up the Cloudant DB
 
-After the login you will see your IBM Cloud Dashboard. Go to Catalog and select the Databases category under services or search for Cloudant. Then create a new Cloudant, the Lite Plan should work for this tutorial. As Authentication method choose IAM.
+After the login you will see your IBM Cloud Dashboard. Go to Catalog and select the Databases category or search for Cloudant. Then create a new Cloudant, the Lite Plan should work for this tutorial. As Authentication method choose IAM.
 
 ![Create Cloudant DB](readme_images/create-cloudant.png)
 
@@ -24,7 +24,7 @@ In your IBM Cloud Account go to the dashboard by clicking the IBM Logo in the up
 
 ![Create Service Credentials](readme_images/create-service-credentials.png)
 
-Now go to Manage (above Service credentials), click Launch Dashboard and create a new non-partitioned Database. Remember your database name for later. (Optionally you can also create your database from a Terminal using your credentials or in a later step from your cloud function).
+Now go to Manage (above Service credentials), click Launch Dashboard and create a new non-partitioned Database (just dont tick the partitioned-button). Remember your database name for later. (Optionally you can also create your database from a Terminal using your credentials or in a later step from your cloud function).
 
 ![Create Database](readme_images/create-database.png)
 
